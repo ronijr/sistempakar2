@@ -1,4 +1,4 @@
-package com.example.apps.com.sistempakar;
+package com.example.apps.com.sistempakar2;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -16,7 +16,7 @@ import java.util.List;
 public class Database extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION=1;
-    private static final String DATABASE_NAME ="sistempakar";
+    private static final String DATABASE_NAME ="sistempakar1";
     private static final String TABLE_DIAGNOSA ="table_diagnosa";
 
     private static final String ID="id";

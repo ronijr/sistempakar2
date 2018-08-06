@@ -1,4 +1,4 @@
-package com.example.apps.com.sistempakar;
+package com.example.apps.com.sistempakar2;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +8,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.submit) Button submit;
@@ -50,10 +48,15 @@ public class MainActivity extends AppCompatActivity {
     String penyakit1,penyakit2,penyakit3,penyakit4,penyakit5 = "";
     String persen1,persen2,persen3,persen4,persen5 ="";
     String code1,code2,code3,code4,code5="";
+    Intent intents;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        database = new Database(this);
+        ButterKnife.bind(this);
+        intents = getIntent();
+        inisialisasiView();
     }
 
     private void inisialisasiView(){
@@ -76,28 +79,35 @@ public class MainActivity extends AppCompatActivity {
         database.addDiagnosa(new Diagnosa("G08",0.8,0.2,"P1","Memliki kemampuan kognitif nonverbal dibawah rata-rata dna kemampuan kognitif verbalnya diatas rata-rata"));
 
         //Penyakit 2
-        database.addDiagnosa(new Diagnosa("G09",0.8,0.2,"P2","Adanya suatu preokupasi yang dangkal dan bersifat dibuat-buat"));
+        database.addDiagnosa(new Diagnosa("G09",0.6,0.1,"P2","Pertumbuhan kepala yang lambat"));
+        database.addDiagnosa(new Diagnosa("G10",0.7,0.4,"P2","Saat anak menginjak usia 1 sampai 4 tahun, kemampuan bersosialisasi dan berbicara si anak akan memburuk"));
+        database.addDiagnosa(new Diagnosa("G11",0.8,0.2,"P2","Anak akan berjalan secara canggung atau memiliki gaya jalan yang kaku"));
 
-        database.addDiagnosa(new Diagnosa("G10",0.8,0.4,"P3","Berkurangnya reaktivitas terhadap lingkungan"));
-        database.addDiagnosa(new Diagnosa("G11",0.8,0.6,"P3","Gaduh gelisah(aktivitas motorik yang tak bertujuan"));
-        database.addDiagnosa(new Diagnosa("G12",0.8,0.4,"P3","Menampilkan dan mempertahankan posisi tubuh tertentu yang tidak wajar"));
-        database.addDiagnosa(new Diagnosa("G13",0.8,0.6,"P3","Perlawanan terhadap semua perintah"));
-        database.addDiagnosa(new Diagnosa("G14",0.6,0.2,"P3","Mempertahankan posisi tubuh yang kaku untuk melawan upaya menggerakan dirinya"));
+        //Penyakit 3
+        database.addDiagnosa(new Diagnosa("G12",0.6,0.3,"P3","Penurunan kemampuan berbicara dan percakapan yang jelek"));
+        database.addDiagnosa(new Diagnosa("G13",0.6,0.2,"P3","Keterampilan sosial buruk"));
+        database.addDiagnosa(new Diagnosa("G14",0.8,0.4,"P3","Kehilangan minat bermain imajiner dan dalam berbagai permainan dan aktivitas"));
+        database.addDiagnosa(new Diagnosa("G15",0.6,0.2,"P3","Penurunan dalam kemampuan berjalan, memanjat, pegang benda dan melakukan gerakan lainnya"));
+        database.addDiagnosa(new Diagnosa("G16",0.6,0.3,"P3","Seringnya terjadi kecelakaan pada anak yang sedang dilatih ke toilet"));
 
         //Penyakit 4
-        database.addDiagnosa(new Diagnosa("G15",0.6,0.2,"P4","Perlambatan psikomotorik"));
-        database.addDiagnosa(new Diagnosa("G16",0.6,0.4,"P4","Sikap pasif dan ketidak inisiatif"));
-        database.addDiagnosa(new Diagnosa("G17",0.8,0.6,"P4","Memilik riwayat satu episode psikotik yang jelas di masa lalu"));
-        database.addDiagnosa(new Diagnosa("G18",0.8,0.4,"P4","Aktifitas menurut dan efek yang menumpul"));
-
-
+        database.addDiagnosa(new Diagnosa("G17",0.5,0.2,"P4","Perkembangan berkomunikasi berjalan lambat"));
+        database.addDiagnosa(new Diagnosa("G18",0.7,0.2,"P4","Lebih suka menyendiri"));
+        database.addDiagnosa(new Diagnosa("G19",0.7,0.4,"P4","Tidak tertarik bermain bersama teman"));
+        database.addDiagnosa(new Diagnosa("G20",0.6,0.1,"P4","Mengalami gangguan sensoris"));
+        database.addDiagnosa(new Diagnosa("G21",0.6,0.3,"P4","Mempunyai pola bermain yang berbeda dengan anak-anak normal lain"));
+        database.addDiagnosa(new Diagnosa("G22",0.8,0.2,"P4","Berperilaku berlebihan (hiperaktif) dan kadang kala kekurangan (hipoaktif)"));
+        database.addDiagnosa(new Diagnosa("G23",0.6,0.2,"P4","Memiliki emosi yang labil (sering marah-marah, tertawa atau menangis tanpa alasan yang jelas)"));
 
         //Penyakit 5
-        database.addDiagnosa(new Diagnosa("G19",0.4,0.2,"P5","Perubahan perilaku pribadi yang bermakna"));
-        database.addDiagnosa(new Diagnosa("G20",0.6,0.2,"P5","Kehilangan minat yang mencolok"));
-        database.addDiagnosa(new Diagnosa("G21",0.4,0.2,"P5","Tidak berbuat sesuatu"));
-        database.addDiagnosa(new Diagnosa("G22",0.4,0.2,"P5","Tanpa tujuan hidup"));
-        database.addDiagnosa(new Diagnosa("G23",0.6,0.4,"P5","Penarikan diri secara sosial"));
+        database.addDiagnosa(new Diagnosa("G24",0.5,0.2,"P4","Tidak mampu untuk memulai suatu pembicaraan atau memelihara suatu pembicaraan dua arah yang baik"));
+        database.addDiagnosa(new Diagnosa("G25",0.6,0.2,"P4","Tidak mampu untuk mencari teman, berbagi kesenangan dan melakukan sesuatu bersama-sama"));
+        database.addDiagnosa(new Diagnosa("G26",0.8,0.4,"P4","Aktivitas, perilaku dan interesnya sangat terbatas, diulang-ulang dan stereotipik"));
+        database.addDiagnosa(new Diagnosa("G27",0.8,0.1,"P4","Adanya preokupasi dengan bagian benda/mainan tertentu yang tak berguna"));
+        database.addDiagnosa(new Diagnosa("G28",0.7,0.4,"P4","Rasa takut yang tak wajar"));
+        database.addDiagnosa(new Diagnosa("G29",0.5,0.1,"P4","Menunjukkan ekspresi fasial"));
+
+
 
         g01.setText(database.getDiagnosa("G01").getName());
         g02.setText(database.getDiagnosa("G02").getName());
@@ -150,9 +160,12 @@ public class MainActivity extends AppCompatActivity {
     private void caculationDiagnosa(){
         Intent intent = new Intent(MainActivity.this, HasilDiagnosaActivity.class);
 
-        if(g01.isChecked() || g02.isChecked() || g03.isChecked() || g04.isChecked()){
+        if(g01.isChecked() || g02.isChecked() || g03.isChecked() || g04.isChecked() || g05.isChecked() || g06.isChecked() || g07.isChecked() || g08.isChecked()){
             double cf1p1 = 0,cf2p1 =0;
             double cf3p1 = 0,cf4p1= 0;
+            double cf5p1 = 0,cf6p1= 0;
+            double cf7p1 = 0,cf8p1= 0;
+
             if(g01.isChecked()){
                 cf1p1 = Math.floor((database.getDiagnosa("G01").getMb() * database.getDiagnosa("G01").getMd()) *100)/100;
             }
@@ -169,13 +182,33 @@ public class MainActivity extends AppCompatActivity {
                 cf4p1 = Math.floor((database.getDiagnosa("G04").getMb() * database.getDiagnosa("G04").getMd()) * 100) /100;
             }
 
+            if(g05.isChecked()){
+                cf4p1 = Math.floor((database.getDiagnosa("G05").getMb() * database.getDiagnosa("G05").getMd()) * 100) /100;
+            }
+
+            if(g06.isChecked()){
+                cf4p1 = Math.floor((database.getDiagnosa("G06").getMb() * database.getDiagnosa("G06").getMd()) * 100) /100;
+            }
+
+            if(g07.isChecked()){
+                cf4p1 = Math.floor((database.getDiagnosa("G07").getMb() * database.getDiagnosa("G07").getMd()) * 100) /100;
+            }
+
+            if(g08.isChecked()){
+                cf4p1 = Math.floor((database.getDiagnosa("G08").getMb() * database.getDiagnosa("G08").getMd()) * 100) /100;
+            }
+
             double cfpp1_2 = cf1p1 + cf2p1 * (1 - cf1p1);
             double cfpp1_3 = cfpp1_2 + cf3p1 * (1 - cfpp1_2);
             double cfpp2_4 = cfpp1_3 + cf4p1 * (1 - cfpp1_3);
-            cfpp2_4 = Math.floor(cfpp2_4 * 100) / 100;
-            double persen = cfpp2_4 * 100;
+            double cfpp1_5 = cfpp2_4 + cf5p1 * (1 - cfpp2_4);
+            double cfpp1_6 = cfpp1_5 + cf6p1 * (1 - cfpp1_5);
+            double cfpp1_7 = cfpp1_6 + cf7p1 * (1 - cfpp1_6);
+            double cfpp1_8 = cfpp1_7 + cf8p1 * (1 - cfpp1_7);
+            cfpp1_8 = Math.floor(cfpp1_8 * 100) / 100;
+            double persen = cfpp1_8 * 100;
             persen1 = String.valueOf(Math.round(persen));
-            penyakit1 = "Skizofrenia Paranoid";
+            penyakit1 = "Sindrom Asperger";
             code1 ="P1";
             intent.putExtra("persen1",persen1);
             intent.putExtra("penyakit1",penyakit1);
@@ -184,40 +217,28 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        if(g05.isChecked() || g06.isChecked() || g07.isChecked() || g08.isChecked() || g09.isChecked()){
+        if(g09.isChecked() || g10.isChecked() || g11.isChecked()){
             double cf1p2 = 0,cf2p2 =0;
-            double cf3p2 = 0,cf4p2= 0;
-            double cf5p2 = 0;
-            if(g05.isChecked()){
-                cf1p2 = Math.floor((database.getDiagnosa("G05").getMb() * database.getDiagnosa("G05").getMd()) *100)/100;
-            }
-
-            if(g06.isChecked()){
-                cf2p2 = Math.floor((database.getDiagnosa("G06").getMb() * database.getDiagnosa("G06").getMd())*100)/100;
-            }
-
-            if(g07.isChecked()){
-                cf3p2 = Math.floor((database.getDiagnosa("G07").getMb() * database.getDiagnosa("G07").getMd() * 100)) / 100;
-            }
-
-
-            if(g08.isChecked() ){
-                cf4p2 = Math.floor((database.getDiagnosa("G08").getMb() * database.getDiagnosa("G08").getMd()) * 100) /100;
-            }
-
-
+            double cf3p2 = 0;
             if(g09.isChecked()){
-                cf5p2 = Math.floor((database.getDiagnosa("G09").getMb() * database.getDiagnosa("G09").getMd()) * 100) /100;
+                cf1p2 = Math.floor((database.getDiagnosa("G09").getMb() * database.getDiagnosa("G09").getMd()) *100)/100;
             }
+
+            if(g10.isChecked()){
+                cf2p2 = Math.floor((database.getDiagnosa("G10").getMb() * database.getDiagnosa("G10").getMd())*100)/100;
+            }
+
+            if(g11.isChecked()){
+                cf3p2 = Math.floor((database.getDiagnosa("G11").getMb() * database.getDiagnosa("G11").getMd() * 100)) / 100;
+            }
+
 
             double cfpp2_1 = cf1p2 + cf2p2 * (1 - cf1p2);
             double cfpp2_2 = cfpp2_1 + cf3p2 * (1 - cfpp2_1);
-            double cfpp2_3 = cfpp2_2 + cf4p2 * (1 - cfpp2_2);
-            double cfpp2_4 = cfpp2_3 + cf5p2 * (1 - cfpp2_3);
-            cfpp2_4 = Math.floor(cfpp2_4 * 100) / 100;
-            double persen = cfpp2_4 * 100;
+            cfpp2_2 = Math.floor(cfpp2_2 * 100) / 100;
+            double persen = cfpp2_2 * 100;
             persen2 = String.valueOf(Math.round(persen));
-            penyakit2 = "Skizofrenia Hiberfrenik";
+            penyakit2 = "Rett Syndrome";
             code2 = "P2";
 
             //Penyakit 2
@@ -227,29 +248,29 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        if(g10.isChecked() || g11.isChecked() || g12.isChecked() || g13.isChecked() || g14.isChecked()){
+        if(g12.isChecked() || g13.isChecked() || g14.isChecked() || g15.isChecked() || g16.isChecked()){
             double cf1p3 = 0,cf2p3 =0;
             double cf3p3 = 0,cf4p3= 0;
             double cf5p3 = 0;
 
-            if(g10.isChecked()){
-                cf1p3 = Math.floor((database.getDiagnosa("G10").getMb() * database.getDiagnosa("G10").getMd()) *100)/100;
-            }
-
-            if(g11.isChecked()){
-                cf2p3 = Math.floor((database.getDiagnosa("G11").getMb() * database.getDiagnosa("G11").getMd())*100)/100;
-            }
-
             if(g12.isChecked()){
-                cf3p3 = Math.floor((database.getDiagnosa("G12").getMb() * database.getDiagnosa("G12").getMd() * 100)) / 100;
+                cf1p3 = Math.floor((database.getDiagnosa("G12").getMb() * database.getDiagnosa("G12").getMd()) *100)/100;
             }
 
             if(g13.isChecked()){
-                cf4p3 = Math.floor((database.getDiagnosa("G13").getMb() * database.getDiagnosa("G13").getMd()) * 100) /100;
+                cf2p3 = Math.floor((database.getDiagnosa("G13").getMb() * database.getDiagnosa("G13").getMd())*100)/100;
             }
 
             if(g14.isChecked()){
-                cf5p3 = Math.floor((database.getDiagnosa("G14").getMb() * database.getDiagnosa("G14").getMd()) * 100) /100;
+                cf3p3 = Math.floor((database.getDiagnosa("G14").getMb() * database.getDiagnosa("G14").getMd() * 100)) / 100;
+            }
+
+            if(g15.isChecked()){
+                cf4p3 = Math.floor((database.getDiagnosa("G15").getMb() * database.getDiagnosa("G15").getMd()) * 100) /100;
+            }
+
+            if(g16.isChecked()){
+                cf5p3 = Math.floor((database.getDiagnosa("G16").getMb() * database.getDiagnosa("G16").getMd()) * 100) /100;
             }
 
             double cfpp3_1 = cf1p3 + cf2p3 * (1 - cf1p3);
@@ -259,7 +280,7 @@ public class MainActivity extends AppCompatActivity {
             cfpp3_4 = Math.floor(cfpp3_4 * 100) / 100;
             double persen = cfpp3_4 * 100;
             persen3 = String.valueOf(Math.round(persen));
-            penyakit3 = "Skizofrenia Katatonik";
+            penyakit3 = "Childhood Disintegrative Disorder";
             code3 = "P3";
             //Penyakit 3
             intent.putExtra("persen3",persen3);
@@ -268,33 +289,50 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        if(g15.isChecked() || g16.isChecked() || g17.isChecked() || g18.isChecked()){
+        if(g17.isChecked() || g18.isChecked() || g19.isChecked() || g20.isChecked() || g21.isChecked() || g22.isChecked() || g23.isChecked()){
             double cf1p4 = 0,cf2p4 =0;
             double cf3p4 = 0,cf4p4= 0;
-
-            if(g15.isChecked()){
-                cf1p4 = Math.floor((database.getDiagnosa("G15").getMb() * database.getDiagnosa("G15").getMd()) *100)/100;
-            }
-
-            if(g16.isChecked()){
-                cf2p4 = Math.floor((database.getDiagnosa("G16").getMb() * database.getDiagnosa("G16").getMd())*100)/100;
-            }
+            double cf5p4 = 0,cf6p4= 0;
+            double cf7p4 = 0;
 
             if(g17.isChecked()){
-                cf3p4 = Math.floor((database.getDiagnosa("G17").getMb() * database.getDiagnosa("G17").getMd() * 100)) / 100;
+                cf1p4 = Math.floor((database.getDiagnosa("G17").getMb() * database.getDiagnosa("G17").getMd()) *100)/100;
             }
 
             if(g18.isChecked()){
-                cf4p4 = Math.floor((database.getDiagnosa("G18").getMb() * database.getDiagnosa("G18").getMd()) * 100) /100;
+                cf2p4 = Math.floor((database.getDiagnosa("G18").getMb() * database.getDiagnosa("G18").getMd())*100)/100;
+            }
+
+            if(g19.isChecked()){
+                cf3p4 = Math.floor((database.getDiagnosa("G19").getMb() * database.getDiagnosa("G19").getMd() * 100)) / 100;
+            }
+
+            if(g20.isChecked()){
+                cf4p4 = Math.floor((database.getDiagnosa("G20").getMb() * database.getDiagnosa("G20").getMd()) * 100) /100;
+            }
+
+            if(g21.isChecked()){
+                cf4p4 = Math.floor((database.getDiagnosa("G21").getMb() * database.getDiagnosa("G21").getMd()) * 100) /100;
+            }
+
+            if(g22.isChecked()){
+                cf4p4 = Math.floor((database.getDiagnosa("G22").getMb() * database.getDiagnosa("G22").getMd()) * 100) /100;
+            }
+
+            if(g23.isChecked()){
+                cf4p4 = Math.floor((database.getDiagnosa("G23").getMb() * database.getDiagnosa("G23").getMd()) * 100) /100;
             }
 
             double cfpp4_1 = cf1p4 + cf2p4 * (1 - cf1p4);
             double cfpp4_2 = cfpp4_1 + cf3p4 * (1 - cfpp4_1);
             double cfpp4_3 = cfpp4_2 + cf4p4 * (1 - cfpp4_2);
-            cfpp4_3 = Math.floor(cfpp4_3 * 100) / 100;
-            double persen = cfpp4_3 * 100;
+            double cfpp4_4 = cfpp4_3 + cf5p4 * (1 - cfpp4_3);
+            double cfpp4_5 = cfpp4_4 + cf6p4 * (1 - cfpp4_4);
+            double cfpp4_6 = cfpp4_5 + cf7p4 * (1 - cfpp4_5);
+            cfpp4_6 = Math.floor(cfpp4_6 * 100) / 100;
+            double persen = cfpp4_6 * 100;
             persen4 = String.valueOf(Math.round(persen));
-            penyakit4 = "Skizofrenia Residual";
+            penyakit4 = "PDD-NOS";
             code4 ="P4";
 
             //Penyakit 4
@@ -304,39 +342,44 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        if(g19.isChecked() || g20.isChecked() || g21.isChecked() || g22.isChecked() || g23.isChecked()){
+        if(g24.isChecked() || g25.isChecked() || g26.isChecked() || g27.isChecked() || g28.isChecked() || g29.isChecked()){
             double cf1p5 = 0,cf2p5 =0;
             double cf3p5 = 0,cf4p5= 0;
-            double cf5p5 = 0;
+            double cf5p5 = 0, cf6p5=0;
 
-            if(g19.isChecked()){
-                cf1p5 = Math.floor((database.getDiagnosa("G19").getMb() * database.getDiagnosa("G19").getMd()) *100)/100;
+            if(g24.isChecked()){
+                cf1p5 = Math.floor((database.getDiagnosa("G24").getMb() * database.getDiagnosa("G24").getMd()) *100)/100;
             }
 
-            if(g20.isChecked()){
-                cf2p5 = Math.floor((database.getDiagnosa("G20").getMb() * database.getDiagnosa("G20").getMd())*100)/100;
+            if(g25.isChecked()){
+                cf2p5 = Math.floor((database.getDiagnosa("G25").getMb() * database.getDiagnosa("G25").getMd())*100)/100;
             }
 
-            if(g21.isChecked()){
-                cf3p5 = Math.floor((database.getDiagnosa("G21").getMb() * database.getDiagnosa("G21").getMd() * 100)) / 100;
+            if(g26.isChecked()){
+                cf3p5 = Math.floor((database.getDiagnosa("G26").getMb() * database.getDiagnosa("G26").getMd() * 100)) / 100;
             }
 
-            if(g22.isChecked()){
-                cf4p5 = Math.floor((database.getDiagnosa("G22").getMb() * database.getDiagnosa("G22").getMd()) * 100) /100;
+            if(g27.isChecked()){
+                cf4p5 = Math.floor((database.getDiagnosa("G27").getMb() * database.getDiagnosa("G27").getMd()) * 100) /100;
             }
 
-            if(g23.isChecked()){
-                cf5p5 = Math.floor((database.getDiagnosa("G23").getMb() * database.getDiagnosa("G23").getMd()) * 100) /100;
+            if(g28.isChecked()){
+                cf5p5 = Math.floor((database.getDiagnosa("G28").getMb() * database.getDiagnosa("G28").getMd()) * 100) /100;
+            }
+
+            if(g29.isChecked()){
+                cf5p5 = Math.floor((database.getDiagnosa("G29").getMb() * database.getDiagnosa("G29").getMd()) * 100) /100;
             }
 
             double cfpp5_1 = cf1p5 + cf2p5 * (1 - cf1p5);
             double cfpp5_2 = cfpp5_1 + cf3p5 * (1 - cfpp5_1);
             double cfpp5_3 = cfpp5_2 + cf4p5 * (1 - cfpp5_2);
             double cfpp5_4 = cfpp5_3 + cf5p5 * (1 - cfpp5_3);
-            cfpp5_4 = Math.floor(cfpp5_4 * 100) / 100;
-            double persen = cfpp5_4 * 100;
+            double cfpp5_5 = cfpp5_4 + cf6p5 * (1 - cfpp5_4);
+            cfpp5_5 = Math.floor(cfpp5_5 * 100) / 100;
+            double persen = cfpp5_5 * 100;
             persen5 = String.valueOf(Math.round(persen));
-            penyakit5 = "Skizofrenia Simplek";
+            penyakit5 = "Childbood Autism";
             code5 ="P5";
 
             //Penyakit 5
@@ -344,6 +387,11 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("penyakit5",penyakit5);
             intent.putExtra("code5",code5);
         }
+
+
+        intent.putExtra("nama",intents.getStringExtra("nama"));
+        intent.putExtra("umur",intents.getStringExtra("umur"));
+        intent.putExtra("jk",intents.getStringExtra("jk"));
 
         startActivity(intent);
 

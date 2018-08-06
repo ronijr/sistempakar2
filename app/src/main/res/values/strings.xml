@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Sistem Pakar</string>
+    <string name="desk1">Sindrom Asperger sejatinya merupakan salah satu dari autisme gangguan spektrum (ASD), namun lebih sering dianggap autisme “high functioning” atau autisme dengan kemampuan yang cukup multifungsi. Karenanya anak dengan sindrom ini terkadang tidak terdiagnosis hingga mereka mulai kesulitan saat berada di sekolah maupun lingkungan kerja</string>
+    <string name="solusi1_1">1) Perawatan untuk anak dengan Asperger biasanya meliputi pelatihan keterampilan sosial agar anak bisa berinteraksi dengan orang lain; terapi bahasa agar anak mampu berkomunikasi dengan baik; terapi perilaku kognitif untuk membantu anak mengubah cara berpikirnya sehingga ia bisa mengendalikan emosinya; dan analisis perilaku terapan untuk menghambat perilaku yang tidak diinginkan.</string>
+    <string name="solusi1_2">2) Selain itu, pemberian obat juga mungkin kadang diperlukan untuk membantu mengatasi gejala terkait dengan depresi dan kecemasan. Tak ketinggalan, pemenuhan nutrisi juga dibutuhkan anak dengan asperger untuk mendukung pertumbuhan dan perkembangannya. Pemberian suplemen mungkin bisa membantu memenuhi nutrisinya, jika diperlukan.</string>
+
+    <string name="desk2">Rett syndrome adalah penyakit yang langka, yang merupakan kelainan pada otak yang terjadi pada perempuan. Biasanya, penyakit ini terdeteksi saat si anak berusia satu atau dua tahun.</string>
+    <string name="solusi2_1">1)	Pengobatan yang tersedia untuk Rett syndrome difokuskan untuk membantu si anak perempuan hidup sebaik-baik mungkin dengan kondisi yang dialaminya. Contohnya, terapi fisik untuk membantu pergerakkan, terapi berbicara untuk membantu mengatasi masalah-masalah si anak berbicara, terapi untuk membantu si anak melakukan aktivitas sehari-hari (seperti mandi dan berpakaian) tanpa bantuan orang lain.</string>
+    <string name="solusi2_2">2)	Para ahli memercayai bahwa terapi-terapi tersebut dapat membantu si anak yang mengidap Rett syndrome dengan orang tuanya hidup selayaknya normal. Meskipun hidup yang benar-benar normal mungkin tidak bisa terjadi, akan tetapi kemajuan dari keadaan si anak sangat mungkin terjadi.</string>
+    <string name="solusi2_3">3)	Ada juga obat-obatan yang membantu masalah pergerakkan pada anak yang mengidap Rett syndrome. Obat-obatan juga bisa membantu mengontrol serangan. Akan tetapi, sayangnya, tidak ada obat yang dapat benar-benar menyembuhkan Rett syndrome.</string>
+
+    <string name="desk3">Childhood Disintegratiive Disorder, merupakan sebuah gangguan pada perkembangan anak yang bahkan sebelum usianya genap 3 tahun gejalanya sudah terlihat dengan jelas.</string>
+    <string name="solusi3_1">1)	Buat daftar tanda dan gejala apa pun yang Anda perhatikan pada anak Anda,termasuk yang mungkin tampak tidak terkait dengan pertumbuhan dan perkembangan.</string>
+    <string name="solusi3_2">2)	Bawa informasi pribadi utama, termasuk rincian dan tanggal kapan anak Anda mencapai berbagai tonggak sejarah. Ini bisa membantu membawa buku bayi atau catatan perkembangan dan perkembangan anak Anda. Video keluarga dapat membantu dokter memahami seperti apa anak Anda sebelum timbulnya gejala. Juga, beritahu dokter Anda tentang sejarah perkembangan kelainan perkembangan keluarga.</string>
+    <string name="solusi3_3">3)	Buat daftar semua obat, serta vitamin, herbal atau suplemen apa pun yang dikonsumsi anak Anda.</string>
+    <string name="solusi3_4">4)	Ambil anggota keluarga atau teman bersama yang sudah biasa dengan anak tersebut, jika memungkinkan. Seseorang yang menemani Anda mungkin ingat sesuatu yang Anda lewatkan atau lupakan.</string>
+    <string name="solusi3_5">5)	Buat daftar pertanyaan untuk ditanyakan ke dokter Anda. Cantumkan pertanyaan terpenting Anda terlebih dahulu, jika waktu habis.</string>
+    <string name="solusi3_6">6)	Ambil notebook atau perangkat elektronik dengan Anda . Gunakan untuk mencatat informasi penting selama kunjungan Anda.</string>
+
+    <string name="desk4">Pervasive Developmental Disorder Not Otherwise Specified (PDD-NOS) merujuk kepada anak-anak yang mempunyai masalah signifikan pada komunikasi dan bermain. Serta mempunyai kesulitan dalam berinteraksi dengan orang lain. PPD-NOS termasuk dalam kategori autis dan disebut juga dengan autis atipikal.</string>
+    <string name="solusi4_1">1)	Bagi orangtua, deteksi dini harus dilakukan. Pemberian obat sebaiknya jangan ditakuti karena akan disesuaikan dan tidak akan diberikan seumur hidup</string>
+    <string name="solusi4_2">2)	Orangtua dan juga keluarga besar harus bisa menerima anak autistik apa adanya. Proses untuk membantu perkembangan anak autistik itu bisa bertahun-tahun. Kesabaran dan kasih sayang sangatlah diperlukan.</string>
+    <string name="solusi4_3">3)	Untuk masyarakat umum, hindari memandang anak autistik sebagai seseorang yang aneh, apalagi menular. Penyebutan “autistik” yang menjamur di tengah masyarakat untuk menjadi bahan ejekan, tidak boleh digunakan. Jangan memakai penyebutan “autistik” di luar keadaan yang sebenarnya karena akan menyakitkan hati orang tua yang memiliki anak autistik.</string>
+
+    <string name="desk5">Autisme pada masa kanak-kanak adalah gangguan perkembangan pada anak yang gejalanya sudah tampak sebelum anak tersebut mencapai umur tiga tahun </string>
+    <string name="solusi5">Terapi obat-obatan, Terapi perilaku, Terapi komunikasi</string>
 </resources>
