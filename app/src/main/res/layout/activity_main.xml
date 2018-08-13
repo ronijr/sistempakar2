@@ -43,24 +43,26 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_height="wrap_content" />
+
             <CheckBox
-                android:layout_width="match_parent"
                 android:id="@+id/g04"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:text="Test"
-                android:layout_height="wrap_content" />
-            <CheckBox
                 android:layout_width="match_parent"
-                android:id="@+id/g05"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Test"
-                android:layout_height="wrap_content" />
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Test" />
+
+            <CheckBox
+                android:id="@+id/g05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Test" />
             <CheckBox
                 android:layout_width="match_parent"
                 android:id="@+id/g06"
@@ -277,9 +279,16 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_height="wrap_content" />
-            <View
+            <Button
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"/>
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:layout_margin="10dp"
+                android:id="@+id/submit"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:layout_gravity="bottom"/>
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
@@ -287,14 +296,6 @@
 
 
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/submit"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="#fff"
-        android:textSize="16sp"
-        android:layout_gravity="bottom"/>
+
 
 </android.support.design.widget.CoordinatorLayout>

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -60,6 +61,9 @@ public class HasilDiagnosaActivity extends AppCompatActivity {
     @BindView(R.id.jk) TextView jk;
     @BindView(R.id.umur) TextView umur;
 
+    @BindView(R.id.ulangi) Button ulangi;
+    @BindView(R.id.keluar) Button keluar;
+
     Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +76,20 @@ public class HasilDiagnosaActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     private void inisialisasiView(){
+        ulangi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        keluar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                finishAffinity();
+            }
+        });
         nama.setText(intent.getStringExtra("nama"));
         jk.setText(intent.getStringExtra("jk"));
         umur.setText(intent.getStringExtra("umur")+" Tahun");
